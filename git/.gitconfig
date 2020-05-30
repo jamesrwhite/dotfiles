@@ -1,0 +1,41 @@
+[user]
+	email = dev.jameswhite@gmail.com
+	name = James White
+	signingkey = FF73BFA03BA10A41
+[alias]
+	c = commit
+	st = status
+	di = diff
+	ds = diff --staged
+	co = checkout
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	unstage = reset HEAD
+	up = pull --rebase --autostash
+	stas = "!bash -c \"git stash --keep-index; git stash push -m \"staged\" --keep-index; git stash pop stash@{1}\""
+[core]
+	pager = less -FXRS -x2
+	excludesfile = ~/.gitignore_global
+[apply]
+	whitespace = nowarn
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+[branch]
+	autosetupmerge = true
+[rebase]
+	autosquash = true
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
