@@ -1,0 +1,67 @@
+#
+# Taps
+#
+tap "homebrew/cask"
+
+#
+# Casks
+#
+
+# Browsers
+cask "google-chrome"
+cask "firefox"
+cask "docker"
+
+# Utilities
+cask "1password"
+
+#
+# Brews
+#
+
+# Unix tools
+brew "bat"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "tree"
+brew "unzip"
+
+# Dev Tools
+brew "asdf"
+brew "watch"
+brew "make"
+brew "mas"
+
+# Shell
+brew "fish"
+brew "starship"
+
+# Git
+brew "git"
+brew "hub"
+brew "diff-so-fancy"
+brew "git-quick-stats"
+brew "git-standup"
+
+# Network
+brew "rsync"
+brew "siege"
+brew "curl"
+brew "prettyping"
+brew "telnet"
+brew "wget"
+
+# Monitoring
+brew "ctop"
+brew "htop"
+brew "ncdu"
+
+# Fun
+brew "cowsay"
+brew "sl"
+
+#
+# Apps
+#
+mas "Caffeine", id: 411246225
+mas "Hues", id: 411811718
