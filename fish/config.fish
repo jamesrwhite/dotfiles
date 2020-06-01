@@ -62,4 +62,4 @@ test -e $HOME/.iterm2_shell_integration.fish && source $HOME/.iterm2_shell_integ
 fish_default_key_bindings
 
 # Load asdf version manager
-source ~/.asdf/asdf.fish
+source (brew --prefix asdf)/asdf.fish
