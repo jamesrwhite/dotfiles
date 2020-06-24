@@ -2,6 +2,7 @@
 # Taps
 #
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 
 #
 # Casks
@@ -10,10 +11,37 @@ tap "homebrew/cask"
 # Browsers
 cask "google-chrome"
 cask "firefox"
+
+# Apps
+cask "sketch"
+cask "notion"
+
+# Media
+cask "spotify"
+cask "macmediakeyforwarder"
+
+# Developer Tools
 cask "docker"
+cask "visual-studio-code"
+cask "iterm2"
+cask "sourcetree"
+cask "macdown"
+cask "sequel-pro"
+cask "chef-workstation"
+cask "java"
+cask "kite"
+cask "gpg-suite"
+
+# Fonts
+cask "font-hasklig"
 
 # Utilities
 cask "1password"
+cask "onyx"
+cask "bartender"
+cask "caffeine"
+cask "rectangle"
+cask "alfred"
 
 #
 # Brews
@@ -31,6 +59,10 @@ brew "asdf"
 brew "watch"
 brew "make"
 brew "mas"
+brew "jq"
+brew "yq"
+brew "tflint"
+brew "ansible"
 
 # Shell
 brew "fish"
@@ -63,5 +95,4 @@ brew "sl"
 #
 # Apps
 #
-mas "Caffeine", id: 411246225
-mas "Hues", id: 411811718
+
