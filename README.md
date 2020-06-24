@@ -11,11 +11,11 @@ I set up. Very much a work in progress.
 
   $ git clone git@github.com:jamesrwhite/dotfiles.git
 
-## Install brew
+## Install brew
 
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-## Install dependencies
+## Install dependencies
 
   $ cd dotfiles/brew && brew bundle
 
