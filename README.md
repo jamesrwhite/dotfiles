@@ -9,21 +9,29 @@ I set up. Very much a work in progress.
 
 ## Clone this repo
 
-  $ git clone git@github.com:jamesrwhite/dotfiles.git
+```sh
+$ git clone git@github.com:jamesrwhite/dotfiles.git
+```
 
 ## Install brew
 
-  $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```sh
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
 
 ## Install dependencies
 
-  $ cd dotfiles/brew && brew bundle
+```sh
+$ cd dotfiles/brew && brew bundle
+```
 
 ## Configure Shell
 
-- add `/usr/local/bin/fish` to `/etc/shells`
+Add `/usr/local/bin/fish` to `/etc/shells`
 
-  $ chsh -s /usr/local/bin/fish
+```sh
+$ chsh -s /usr/local/bin/fish
+```
 
 ## Link git and fish config
 
