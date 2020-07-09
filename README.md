@@ -10,7 +10,7 @@ I set up. Very much a work in progress.
 ## Clone this repo
 
 ```sh
-$ git clone git@github.com:jamesrwhite/dotfiles.git
+$ cd && git clone git@github.com:jamesrwhite/dotfiles.git .dotfiles
 ```
 
 ## Install brew
@@ -22,7 +22,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 ## Install dependencies
 
 ```sh
-$ cd dotfiles/brew && brew bundle
+$ cd .dotfiles/brew && brew bundle
 ```
 
 ## Configure Shell
