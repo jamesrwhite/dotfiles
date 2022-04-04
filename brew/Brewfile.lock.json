@@ -2110,6 +2110,20 @@
       "muesli/tap/duf": {
         "version": "0.8.1",
         "bottle": false
+      },
+      "fisher": {
+        "version": "4.3.1",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/fisher/blobs/sha256:06b0c91b96b21c90c38022f9365a72e2c6fcbfe544cdb4c46f43b347df750bbd",
+              "sha256": "06b0c91b96b21c90c38022f9365a72e2c6fcbfe544cdb4c46f43b347df750bbd"
+            }
+          }
+        }
       }
     },
     "mas": {
@@ -2148,7 +2162,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.4.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "9d643ab60504c8758a611812992260b3ae22715e",
+        "Homebrew/homebrew-core": "a92b35012feceaf9a9a4047e18b0e4f17c70a856",
         "CLT": "13.3.0.0.1.1645755326",
         "Xcode": "13.3",
         "macOS": "12.3"

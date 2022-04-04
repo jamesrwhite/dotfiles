@@ -72,12 +72,12 @@ brew "dive"
 brew "qrencode"
 brew "pass"
 brew "pass-otp"
-brew "q"
 brew "tldr"
 brew "staticcheck"
 
 # Shell
 brew "fish"
+brew "fisher"
 brew "bash"
 brew "starship"
 brew "shellcheck"
