@@ -4,15 +4,17 @@
 	signingkey = FF73BFA03BA10A41
 [alias]
 	c = commit
-	st = status
+	p = push
+	s = status
 	di = diff
 	ds = diff --staged
 	co = checkout
+	cp = cherry-pick
 	br = branch
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	unstage = reset HEAD
 	up = pull --rebase --autostash
-	stas = "!bash -c \"git stash --keep-index; git stash push -m \"staged\" --keep-index; git stash pop stash@{1}\""
+	fu = commit -a --fixup
 [core]
 	pager = less -FXRS -x2
 	excludesfile = ~/.gitignore_global
@@ -32,10 +34,19 @@
 	default = simple
 [credential]
 	helper = osxkeychain
+[url "git@github.com:"]
+        insteadOf = https://github.com/
 [commit]
 	gpgsign = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [pager]
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
 	show = diff-so-fancy | less --tabs=1,5 -RFX
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
