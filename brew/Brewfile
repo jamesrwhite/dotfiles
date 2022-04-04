@@ -13,8 +13,9 @@ tap "muesli/tap"
 cask "google-chrome"
 cask "firefox"
 
-# Chat
+# Chat / Email
 cask "slack"
+cask "spark"
 
 # Media
 cask "spotify"
@@ -26,7 +27,6 @@ cask "visual-studio-code"
 cask "iterm2"
 cask "sourcetree"
 cask "sequel-pro"
-cask "java"
 cask "gpg-suite"
 cask "aws-vault"
 cask "graphiql"
@@ -63,7 +63,6 @@ brew "pidof"
 brew "asdf"
 brew "watch"
 brew "make"
-brew "mas"
 brew "jq"
 brew "yq"
 brew "tflint"
@@ -114,11 +113,10 @@ brew "muesli/tap/duf"
 brew "cowsay"
 brew "sl"
 
-
 #
 # Mac App Store Apps
 #
 
+brew "mas"
 mas "Bear", id: 1091189122
 mas "Microsoft To Do", id: 1274495053
-mas "Twenttty", id: 1534796314
