@@ -3,6 +3,7 @@
 #
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "muesli/tap"
 
 #
 # Casks
@@ -12,9 +13,8 @@ tap "homebrew/cask-fonts"
 cask "google-chrome"
 cask "firefox"
 
-# Apps
-cask "sketch"
-cask "notion"
+# Chat
+cask "slack"
 
 # Media
 cask "spotify"
@@ -25,18 +25,21 @@ cask "docker"
 cask "visual-studio-code"
 cask "iterm2"
 cask "sourcetree"
-cask "macdown"
 cask "sequel-pro"
-cask "chef-workstation"
 cask "java"
-cask "kite"
 cask "gpg-suite"
+cask "aws-vault"
+cask "graphiql"
+cask "stats"
+cask "the-unarchiver"
 
 # Fonts
+cask "font-hack-nerd-font"
 cask "font-hasklig"
 
 # Utilities
 cask "1password"
+cask "1password-cli"
 cask "onyx"
 cask "bartender"
 cask "caffeine"
@@ -48,11 +51,13 @@ cask "alfred"
 #
 
 # Unix tools
+brew "coreutils"
 brew "bat"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "tree"
 brew "unzip"
+brew "pidof"
 
 # Dev Tools
 brew "asdf"
@@ -62,11 +67,20 @@ brew "mas"
 brew "jq"
 brew "yq"
 brew "tflint"
-brew "ansible"
+brew "awscli"
+brew "dive"
+brew "qrencode"
+brew "pass"
+brew "pass-otp"
+brew "q"
+brew "tldr"
+brew "staticcheck"
 
 # Shell
 brew "fish"
+brew "bash"
 brew "starship"
+brew "shellcheck"
 
 # Git
 brew "git"
@@ -74,6 +88,7 @@ brew "hub"
 brew "diff-so-fancy"
 brew "git-quick-stats"
 brew "git-standup"
+brew "git-recent"
 
 # Network
 brew "rsync"
@@ -82,17 +97,28 @@ brew "curl"
 brew "prettyping"
 brew "telnet"
 brew "wget"
+brew "mtr"
+brew "nmap"
+brew "prettyping"
+brew "vnstat"
+brew "websocat"
 
 # Monitoring
 brew "ctop"
 brew "htop"
 brew "ncdu"
+brew "btop"
+brew "muesli/tap/duf"
 
 # Fun
 brew "cowsay"
 brew "sl"
 
+
 #
-# Apps
+# Mac App Store Apps
 #
 
+mas "Bear", id: 1091189122
+mas "Microsoft To Do", id: 1274495053
+mas "Twenttty", id: 1534796314
