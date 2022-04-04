@@ -2,7 +2,9 @@
 # PATH
 #
 
-# Add homebrew's sbin to the PATH
+# Add homebrew to the PATH
+set PATH "/opt/homebrew/bin" $PATH
+set PATH "/opt/homebrew/sbin" $PATH
 set PATH "/usr/local/sbin" $PATH
 
 # Add the Google Cloud SDK to the PATH
