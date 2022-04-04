@@ -1,4 +1,6 @@
-location := "~/.dotfiles"
+SHELL := /bin/bash
+homebrew = $(shell test -d /opt/homebrew/bin && echo -n '/opt/homebrew/bin' || echo -n '/usr/local/bin')
+location := $(HOME)/.dotfiles
 
 setup:
 	#
@@ -8,26 +10,26 @@ setup:
 	chmod +x brew.sh
 	./brew.sh
 	rm brew.sh
-	brew doctor
 	@echo
 
 	#
 	# 🏗 Installing apps and tools via brew
 	#
-	cd brew && brew bundle
+	cd brew && "$(homebrew)/brew" bundle --no-lock
 	@echo
 
 	#
 	# 🐟 Making fish the default shell and configuring it
 	#
-	chsh -s /usr/local/bin/fish
-	ln -s "~/$(location)/fish/config.fish" "~/.config/fish/config.fish"
-	fisher add jethrokuan/z
-	fisher add franciscolourenco/done
+	chsh -s "$(homebrew)/fish"
+	ln -sf "$(location)/fish/config.fish" "$(HOME)/.config/fish/config.fish"
+	ln -sf "$(location)/fish/fish_plugins" "$(HOME)/.config/fish/fish_plugins"
+	curl -L https://iterm2.com/shell_integration/fish -o "$(HOME)/.iterm2_shell_integration.fish"
+	fish -c "fisher update"
 	@echo
 
 	#
 	# ♻️ Configuring git
 	#
-	ln -sf "~/$(location)/git/.gitignore_global" "~/.gitignore_global"
-	ln -sf "~/$(location)/git/.gitconfig" "~/.gitconfig"
+	ln -sf "$(location)/git/.gitignore_global" "$(HOME)/.gitignore_global"
+	ln -sf "$(location)/git/.gitconfig" "$(HOME)/.gitconfig"
