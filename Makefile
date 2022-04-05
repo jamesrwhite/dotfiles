@@ -23,6 +23,8 @@ setup:
 	#
 	chsh -s "$(homebrew)/fish"
 	ln -sf "$(location)/fish/config.fish" "$(HOME)/.config/fish/config.fish"
+	ln -sf "$(location)/fish/env.fish" "$(HOME)/.config/fish/env.fish"
+	ln -sf "$(location)/fish/secrets.fish" "$(HOME)/.config/fish/secrets.fish"
 	ln -sf "$(location)/fish/fish_plugins" "$(HOME)/.config/fish/fish_plugins"
 	curl -L https://iterm2.com/shell_integration/fish -o "$(HOME)/.iterm2_shell_integration.fish"
 	fish -c "fisher update"
