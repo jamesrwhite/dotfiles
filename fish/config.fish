@@ -73,7 +73,7 @@ test -e $HOME/.iterm2_shell_integration.fish && source $HOME/.iterm2_shell_integ
 fish_default_key_bindings
 
 # Load asdf version manager
-source (brew --prefix asdf)/asdf.fish
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 # Fix emoji rendering
 set -g fish_emoji_width 4
