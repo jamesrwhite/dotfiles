@@ -7,7 +7,7 @@
 	p = push
 	s = status
 	aa = add --all
-	am = commit --amend
+	ac = commit --amend --no-edit
 	di = diff
 	ds = diff --staged
 	bd = branch -D
