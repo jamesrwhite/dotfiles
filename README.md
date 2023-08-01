@@ -32,7 +32,6 @@ the `location=/path/to/dotfiles` argument.
 - invert scroll on trackpad
 - double tap to right click on trackpad
 - turn dock hiding on
-- system wide dark mode
 - minimise to dock using scale
 - minimise windows into app window
 - don't show recent apps in dock

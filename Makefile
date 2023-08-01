@@ -35,3 +35,10 @@ setup:
 	#
 	ln -sf "$(location)/git/.gitignore_global" "$(HOME)/.gitignore_global"
 	ln -sf "$(location)/git/.gitconfig" "$(HOME)/.gitconfig"
+
+	#
+	# 🍎 MacOS System Config
+	#
+	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+	defaults write com.apple.dock showhidden -bool TRUE
+	killall Dock
