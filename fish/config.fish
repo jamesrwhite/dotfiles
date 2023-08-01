@@ -29,6 +29,7 @@ eval (starship init fish)
 alias json 'jq -C .'
 alias page 'less -R'
 alias k kubectl
+alias mk minikube
 alias tf terraform
 alias g git
 alias flushdns "sudo killall -HUP mDNSResponder"
@@ -40,6 +41,9 @@ alias md macdown
 alias cat bat
 alias ping "prettyping --nolegend"
 alias c code
+alias m gmake
+alias make gmake
+alias l exa
 abbr --add unset 'set --erase'
 
 #
