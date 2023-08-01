@@ -6,8 +6,11 @@
 	c = commit
 	p = push
 	s = status
+	aa = add --all
+	am = commit --amend
 	di = diff
 	ds = diff --staged
+	bd = branch -D
 	co = checkout
 	cp = cherry-pick
 	br = branch
@@ -15,6 +18,9 @@
 	unstage = reset HEAD
 	up = pull --rebase --autostash
 	fu = commit -a --fixup
+	rb = rebase
+	rbc = rebase --continue
+	rba = rebase --abort
 [core]
 	pager = less -FXRS -x2
 	excludesfile = ~/.gitignore_global
@@ -28,10 +34,15 @@
 	ui = auto
 [branch]
 	autosetupmerge = true
+	autosetuprebase = always
 [rebase]
 	autosquash = true
+	autostash = true
+[merge]
+	ff = only
 [push]
 	default = simple
+	autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 [url "git@github.com:"]
@@ -43,6 +54,7 @@
 	show = diff-so-fancy | less --tabs=1,5 -RFX
 [pull]
 	rebase = true
+	ff = only
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
