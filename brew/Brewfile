@@ -43,7 +43,7 @@ cask "onyx"
 cask "bartender"
 cask "caffeine"
 cask "rectangle"
-cask "alfred"
+cask "raycast"
 
 #
 # Brews
@@ -57,6 +57,7 @@ brew "gnu-tar"
 brew "tree"
 brew "unzip"
 brew "pidof"
+brew "vim"
 
 # Dev Tools
 brew "asdf"
@@ -72,6 +73,12 @@ brew "pass"
 brew "pass-otp"
 brew "tldr"
 brew "staticcheck"
+brew "eksctl"
+brew "helm"
+brew "kind"
+brew "minikube"
+brew "pipenv"
+brew "pipx"
 
 # Shell
 brew "fish"
