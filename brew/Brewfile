@@ -133,4 +133,3 @@ brew "sl"
 brew "mas"
 mas "Bear", id: 1091189122
 mas "Microsoft To Do", id: 1274495053
-mas "Spark", id: 1176895641
