@@ -23,7 +23,7 @@ cask "spotify"
 cask "macmediakeyforwarder"
 
 # Developer Tools
-cask "podman-desktop"
+cask "rancher"
 cask "visual-studio-code"
 cask "iterm2"
 cask "sourcetree"
