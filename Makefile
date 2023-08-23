@@ -22,6 +22,7 @@ setup:
 	# 🐟 Making fish the default shell and configuring it
 	#
 	chsh -s "$(homebrew)/fish"
+	mkdir -p "$(HOME)/.config/fish"
 	ln -sf "$(location)/fish/config.fish" "$(HOME)/.config/fish/config.fish"
 	ln -sf "$(location)/fish/env.fish" "$(HOME)/.config/fish/env.fish"
 	cp "$(location)/fish/secrets.example.fish" "$(HOME)/.config/fish/secrets.fish"
