@@ -35,8 +35,8 @@ alias g git
 alias flushdns "sudo killall -HUP mDNSResponder"
 alias copy pbcopy
 alias dsusage ncdu
-alias dc docker-compose
-alias d docker
+alias dc podman-compose
+alias d podman
 alias md macdown
 alias cat bat
 alias ping "prettyping --nolegend"
@@ -44,6 +44,7 @@ alias c code
 alias m gmake
 alias make gmake
 alias l exa
+alias docker podman
 abbr --add unset 'set --erase'
 
 #

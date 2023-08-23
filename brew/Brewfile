@@ -21,7 +21,7 @@ cask "spotify"
 cask "macmediakeyforwarder"
 
 # Developer Tools
-cask "docker"
+cask "podman-desktop"
 cask "visual-studio-code"
 cask "iterm2"
 cask "sourcetree"
