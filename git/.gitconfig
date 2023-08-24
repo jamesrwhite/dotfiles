@@ -1,7 +1,7 @@
 [user]
 	email = dev.jameswhite@gmail.com
 	name = James White
-	signingkey = FF73BFA03BA10A41
+	signingkey = ~/.ssh/id_rsa.pub
 [alias]
 	c = commit
 	p = push
@@ -69,3 +69,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[gpg]
+	format = ssh
