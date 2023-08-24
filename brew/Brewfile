@@ -61,6 +61,7 @@ brew "tree"
 brew "unzip"
 brew "pidof"
 brew "vim"
+brew "exa"
 
 # Dev Tools
 brew "asdf"

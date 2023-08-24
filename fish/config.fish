@@ -47,6 +47,8 @@ alias c code
 alias m gmake
 alias make gmake
 alias l exa
+alias ls exa
+alias ll "exa -alF"
 abbr --add unset 'set --erase'
 
 #
