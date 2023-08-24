@@ -13,10 +13,11 @@ tap "muesli/tap"
 cask "google-chrome"
 cask "firefox"
 
-# Chat / Email
+# Chat / Email / News / Notes
 cask "slack"
 cask "readdle-spark"
 cask "netnewswire"
+cask "obsidian"
 
 # Media
 cask "spotify"
