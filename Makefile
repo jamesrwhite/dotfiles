@@ -6,10 +6,10 @@ setup:
 	#
 	# 🍺 Install brew
 	#
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh -o brew.sh
-	chmod +x brew.sh
-	./brew.sh
-	rm brew.sh
+	which brew || (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh -o brew.sh && \
+	chmod +x brew.sh && \
+	./brew.sh && \
+	rm brew.sh)
 	@echo
 
 	#
