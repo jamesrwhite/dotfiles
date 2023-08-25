@@ -34,7 +34,6 @@ cask "aws-vault"
 cask "graphiql"
 cask "stats"
 cask "the-unarchiver"
-cask "grafana"
 
 # Fonts
 cask "font-hack-nerd-font"
@@ -95,6 +94,7 @@ brew "minikube"
 brew "pipenv"
 brew "pipx"
 brew "gh"
+brew "grafana"
 
 # Shell
 brew "fish"
