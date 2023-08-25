@@ -39,6 +39,11 @@ cask "grafana"
 # Fonts
 cask "font-hack-nerd-font"
 cask "font-hasklig"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-fira-mono"
+cask "font-fira-mono-for-powerline"
+cask "font-fira-mono-nerd-font"
+cask "font-jetbrains-mono"
 
 # Utilities
 cask "1password"
