@@ -32,6 +32,8 @@ eval (starship init fish)
 alias json 'jq -C .'
 alias page 'less -R'
 alias k kubectl
+alias kns kubens
+alias kctx kubectx
 alias mk minikube
 alias tf terraform
 alias g git
