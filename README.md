@@ -26,16 +26,25 @@ the `location=/path/to/dotfiles` argument.
 
 > TODO: look into automating these
 
-- move doc to left
-- hide applications holder in dock
-- right click on mouse
-- invert scroll on trackpad
-- double tap to right click on trackpad
-- turn dock hiding on
-- minimise to dock using scale
-- minimise windows into app window
-- don't show recent apps in dock
+- [x] enable dark mode
+- [ ] Reduce keyboard repeat key lag
+- [ ] move doc to left
+- [ ] hide applications holder in dock
+- [ ] right click on mouse
+- [ ] invert scroll on trackpad
+- [ ] double tap to right click on trackpad
+- [ ] turn dock hiding on
+- [ ] minimise to dock using scale
+- [ ] minimise windows into app window
+- [ ] don't show recent apps in dock
 
 ### VS Code
 
 - Setting Sync
+
+### TODO
+
+- Add shell to `/etc/shells`
+- Include `.asdfrc`
+- link `.vimrc`
+- Add `.config/starship.toml`
