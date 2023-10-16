@@ -21,6 +21,8 @@
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
+	main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+	com = "!f(){ git checkout $(git main-branch) $@;}; f"
 [core]
 	pager = less -FXRS -x2
 	excludesfile = ~/.gitignore_global
