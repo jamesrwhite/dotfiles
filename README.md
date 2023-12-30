@@ -24,7 +24,7 @@ the `location=/path/to/dotfiles` argument.
 
 ### Mac Settings
 
-> TODO: look into automating these
+> TODO: look into automating these via https://macos-defaults.com/#💻-list-of-commands
 
 - [x] enable dark mode
 - [ ] Reduce keyboard repeat key lag
