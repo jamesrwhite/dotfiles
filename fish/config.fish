@@ -17,8 +17,8 @@ set PATH $GOPATH/bin $PATH
 # For pipx
 set PATH $PATH $HOME/.local/bin
 
-# For rancher
-set PATH $PATH $HOME/.rd/bin
+# For Check Sheet
+set PATH $PATH "$HOME/Development/Check Sheet/code/bin"
 
 #
 # Prompt
@@ -48,9 +48,9 @@ alias ping "prettyping --nolegend"
 alias c code
 alias m gmake
 alias make gmake
-alias l exa
-alias ls exa
-alias ll "exa -alF"
+alias l "lsd --icon never"
+alias ls "lsd --icon never"
+alias ll "lsd -alF --icon never"
 abbr --add unset 'set --erase'
 
 #
