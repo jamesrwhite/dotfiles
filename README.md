@@ -45,6 +45,5 @@ the `location=/path/to/dotfiles` argument.
 ### TODO
 
 - Add shell to `/etc/shells`
-- Include `.asdfrc`
 - link `.vimrc`
 - Add `.config/starship.toml`
