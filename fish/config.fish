@@ -83,8 +83,8 @@ test -e $HOME/.iterm2_shell_integration.fish && source $HOME/.iterm2_shell_integ
 # Theme config
 fish_default_key_bindings
 
-# Load rtx version manager
-rtx activate fish | source
+# Load mise version manager
+/opt/homebrew/bin/mise activate fish | source
 
 # Fix emoji rendering
 set -g fish_emoji_width 4
