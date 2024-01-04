@@ -92,3 +92,7 @@ set -g fish_emoji_width 4
 # Remove welcome message
 set -g fish_greeting
 
+# VS Code integration
+string match -q "$TERM_PROGRAM" "vscode"
+and . (code --locate-shell-integration-path fish)
+
