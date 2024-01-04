@@ -11,7 +11,7 @@ set PATH "/usr/local/sbin" $PATH
 test -e $HOME/google-cloud-sdk/path.fish.inc && source $HOME/google-cloud-sdk/path.fish.inc
 
 # Configure GOPATH and add binaries to the PATH
-set -x GOPATH (go env GOPATH)
+set -x GOPATH ~/go
 set PATH $GOPATH/bin $PATH
 
 # For pipx
