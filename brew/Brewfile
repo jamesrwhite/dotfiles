@@ -69,7 +69,7 @@ brew "vim"
 brew "exa"
 
 # Dev Tools
-brew "rtx"
+brew "mise"
 brew "watch"
 brew "make"
 brew "cmake"
