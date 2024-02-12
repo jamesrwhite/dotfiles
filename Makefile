@@ -19,6 +19,11 @@ setup:
 	@echo
 
 	#
+	# 👆 Enabling sudo via TouchID
+	#
+	echo 'auth       sufficient     pam_tid.so' | sudo tee /etc/pam.d/sudo_local
+
+	#
 	# 🐟 Making fish the default shell and configuring it
 	#
 	chsh -s "$(homebrew)/fish"
