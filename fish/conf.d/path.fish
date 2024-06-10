@@ -9,3 +9,7 @@ set PATH $GOPATH/bin $PATH
 
 # For pipx
 set PATH $PATH $HOME/.local/bin
+
+# For cargo
+set PATH $PATH $HOME/.cargo/bin
+
