@@ -7,7 +7,6 @@
 	p = push
 	s = status
 	aa = add --all
-	ac = commit --amend --no-edit
 	di = diff
 	ds = diff --staged
 	bd = branch -D
@@ -23,6 +22,7 @@
 	rba = rebase --abort
 	main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 	com = "!f(){ git checkout $(git main-branch) $@;}; f"
+	am = commit --amend --no-edit
 [core]
 	pager = less -FXRS -x2
 	excludesfile = ~/.gitignore_global
