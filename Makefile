@@ -49,3 +49,5 @@ setup:
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
 	defaults write com.apple.dock showhidden -bool TRUE
 	killall Dock
+	sudo pmset hibernatemode 25
+

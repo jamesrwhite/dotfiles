@@ -27,6 +27,7 @@ the `location=/path/to/dotfiles` argument.
 > TODO: look into automating these via https://macos-defaults.com/#💻-list-of-commands
 
 - [x] enable dark mode
+- [x] full hibernate on laptop close
 - [ ] Reduce keyboard repeat key lag
 - [ ] move doc to left
 - [ ] hide applications holder in dock
