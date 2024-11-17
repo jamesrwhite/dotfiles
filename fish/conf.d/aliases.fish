@@ -6,6 +6,10 @@ alias kctx kubectx
 alias mk minikube
 alias tf terraform
 alias g git
+alias gs "git status"
+alias ga "git add"
+alias gc "git commit -m"
+alias grb "git rebase"
 alias flushdns "sudo killall -HUP mDNSResponder"
 alias copy pbcopy
 alias dsusage ncdu
