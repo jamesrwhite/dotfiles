@@ -16,13 +16,19 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	unstage = reset HEAD
 	up = pull --rebase --autostash
+	pf = push --force-with-lease
 	fu = commit -a --fixup
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
+	rbm = "!f(){ git rebase -i $(git main-branch) $@; }; f"
 	main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
-	com = "!f(){ git checkout $(git main-branch) $@;}; f"
+	com = "!f(){ git checkout $(git main-branch) $@; }; f"
 	ac = commit --amend --no-edit
+	sa = stash
+	ss = stash push --staged
+	sl = stash list
+	sp = "!f(){ git stash pop $@; }; f"
 [core]
 	pager = less -FXRS -x2
 	excludesfile = ~/.gitignore_global
@@ -38,23 +44,23 @@
 [branch]
 	autosetupmerge = true
 	autosetuprebase = always
+	sort = -committerdate
 [rebase]
 	autosquash = true
 	autostash = true
 [merge]
 	ff = only
+	conflictstyle = zdiff3
 [push]
 	default = simple
 	autoSetupRemote = true
+	followTags = true
 [credential]
 	helper = osxkeychain
 [url "git@github.com:"]
         insteadOf = https://github.com/
 [commit]
 	gpgsign = true
-[pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
 [pull]
 	rebase = true
 	ff = only
@@ -73,3 +79,17 @@
 	trustExitCode = true
 [gpg]
 	format = ssh
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[fetch]
+        prune = true
+        all = true
+[help]
+        autocorrect = prompt
+[column]
+	ui = auto
+[tag]
+	sort = version:refname
