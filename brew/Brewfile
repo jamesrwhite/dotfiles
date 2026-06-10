@@ -132,3 +132,11 @@ brew "muesli/tap/duf"
 # Fun
 brew "cowsay"
 brew "sl"
+
+# AI
+brew "skills"
+brew "mlx"
+brew "mlx-lm"
+brew "claude-code"
+brew "codex"
+
