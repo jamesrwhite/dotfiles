@@ -7,7 +7,7 @@ abbr --add copy pbcopy
 abbr --add dsusage ncdu
 abbr --add dc docker-compose
 abbr --add d docker
-abbr --add c bat
+abbr --add cat bat --paging=never
 abbr --add ping 'prettyping --nolegend'
 abbr --add c code
 abbr --add m gmake
