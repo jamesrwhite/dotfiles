@@ -67,6 +67,7 @@ brew "unzip"
 brew "pidof"
 brew "vim"
 brew "exa"
+brew "zoxide"
 
 # Dev Tools
 brew "mise"
@@ -135,4 +136,3 @@ brew "muesli/tap/duf"
 # Fun
 brew "cowsay"
 brew "sl"
-

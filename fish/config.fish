@@ -7,6 +7,9 @@ fish_default_key_bindings
 # Load mise version manager
 /opt/homebrew/bin/mise activate fish | source
 
+# Setup zoxide (z)
+zoxide init fish | source
+
 # Fix emoji rendering
 set -g fish_emoji_width 4
 
