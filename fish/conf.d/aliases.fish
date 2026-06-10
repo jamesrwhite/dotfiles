@@ -40,4 +40,5 @@ abbr --add nodes 'kubectl get nodes --label-columns=topology.kubernetes.io/zone,
 abbr --add ip ipinfo
 abbr --add c2ip ipinfo cidr2ip
 abbr --add dns doge @1.1.1.1
-
+abbr --add p pnpm
+abbr --add pw pnpm wrangler
