@@ -1,20 +1,22 @@
-abbr --add json 'jq -C .'
+alias make gmake
+alias l 'lsd --icon never'
+alias ls 'lsd --icon never'
+alias ll 'lsd -alF --icon never'
+alias cat 'bat --paging=never'
+alias flushdns 'sudo killall -HUP mDNSResponder'
+alias json 'jq -C .'
+
+abbr --add m make
 abbr --add page 'less -R'
 abbr --add mk minikube
 abbr --add tf terraform
-abbr --add flushdns 'sudo killall -HUP mDNSResponder'
 abbr --add copy pbcopy
 abbr --add dsusage ncdu
 abbr --add dc docker-compose
 abbr --add d docker
-abbr --add cat bat --paging=never
+
 abbr --add ping 'prettyping --nolegend'
 abbr --add c code
-abbr --add m gmake
-abbr --add make gmake
-abbr --add l 'lsd --icon never'
-abbr --add ls 'lsd --icon never'
-abbr --add ll 'lsd -alF --icon never'
 
 # git
 abbr --add g git
