@@ -29,6 +29,7 @@
 	ss = stash push --staged
 	sl = stash list
 	sp = "!f(){ git stash pop $@; }; f"
+	cf = "!f(){ git commit --fixup=$@; }; f"
 [core]
 	pager = less -FXRS -x2
 	excludesfile = ~/.gitignore_global
@@ -64,6 +65,7 @@
 [pull]
 	rebase = true
 	ff = only
+	autostash = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
