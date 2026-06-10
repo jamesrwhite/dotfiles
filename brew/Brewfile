@@ -123,6 +123,7 @@ brew "nmap"
 brew "prettyping"
 brew "vnstat"
 brew "websocat"
+brew "doge"
 
 # Monitoring
 brew "ctop"
@@ -135,9 +136,3 @@ brew "muesli/tap/duf"
 brew "cowsay"
 brew "sl"
 
-#
-# Mac App Store Apps
-#
-
-brew "mas"
-mas "Microsoft To Do", id: 1274495053

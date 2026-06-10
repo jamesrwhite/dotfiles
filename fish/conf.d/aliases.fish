@@ -36,5 +36,9 @@ abbr --add kd 'kubectl describe'
 abbr --add kg 'kubectl get'
 abbr --add pods 'kubectl get pods --sort-by=.metadata.creationTimestamp'
 abbr --add nodes 'kubectl get nodes --label-columns=topology.kubernetes.io/zone,type,lifecycle,karpenter.sh/capacity-type,karpenter.sh/provisioner-name,eks.amazonaws.com/nodegroup,kubernetes.io/arch,node.kubernetes.io/instance-type --sort-by={.metadata.creationTimestamp}'
+
+# useful shortcuts
 abbr --add ip ipinfo
 abbr --add c2ip ipinfo cidr2ip
+abbr --add dns doge @1.1.1.1
+
