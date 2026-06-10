@@ -7,6 +7,7 @@ adjust-cell-height = 1
 
 # shell
 shell-integration = fish
+copy-on-select = clipboard
 
 # design
 theme = "Vercel"
