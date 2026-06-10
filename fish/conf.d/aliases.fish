@@ -1,31 +1,30 @@
-alias json 'jq -C .'
-alias page 'less -R'
-alias mk minikube
-alias tf terraform
-alias flushdns "sudo killall -HUP mDNSResponder"
-alias copy pbcopy
-alias dsusage ncdu
-alias dc docker-compose
-alias d docker
-alias md macdown
-alias cat bat
-alias ping "prettyping --nolegend"
-alias c code
-alias m gmake
-alias make gmake
-alias l "lsd --icon never"
-alias ls "lsd --icon never"
-alias ll "lsd -alF --icon never"
+abbr --add json 'jq -C .'
+abbr --add page 'less -R'
+abbr --add mk minikube
+abbr --add tf terraform
+abbr --add flushdns 'sudo killall -HUP mDNSResponder'
+abbr --add copy pbcopy
+abbr --add dsusage ncdu
+abbr --add dc docker-compose
+abbr --add d docker
+abbr --add c bat
+abbr --add ping 'prettyping --nolegend'
+abbr --add c code
+abbr --add m gmake
+abbr --add make gmake
+abbr --add l 'lsd --icon never'
+abbr --add ls 'lsd --icon never'
+abbr --add ll 'lsd -alF --icon never'
 
 # git
-alias g git
-alias gs "git status"
-alias ga "git add"
-alias gc "git commit -m"
-alias grb "git rebase"
-alias gd "git diff"
-alias gu "git pull --rebase --autostash"
-alias gp "git push"
+abbr --add g git
+abbr --add gs 'git status'
+abbr --add ga 'git add'
+abbr --add gc 'git commit -m'
+abbr --add grb 'git rebase'
+abbr --add gd 'git diff'
+abbr --add gu 'git pull --rebase --autostash'
+abbr --add gp 'git push'
 
 # k8s
 abbr --add k kubectl
