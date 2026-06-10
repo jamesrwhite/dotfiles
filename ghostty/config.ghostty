@@ -1,0 +1,20 @@
+# typography
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 18
+font-thicken = true
+font-thicken-strength = 1
+adjust-cell-height = 1
+
+# shell
+shell-integration = fish
+
+# design
+theme = "Vercel"
+window-padding-x = 20
+window-padding-y= 1 
+
+# working directories
+working-directory=home
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+split-inherit-working-directory = true

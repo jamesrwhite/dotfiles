@@ -42,6 +42,14 @@ setup:
 	#
 	ln -sf "$(location)/git/.gitignore_global" "$(HOME)/.gitignore_global"
 	ln -sf "$(location)/git/.gitconfig" "$(HOME)/.gitconfig"
+	@echo
+
+	#
+	# 👻 Configuring ghostty
+	#
+	mkdir -p "$(HOME)/Library/Application Support/com.mitchellh.ghostty"
+	ln -sf "$(location)/ghostty/config.ghostty" "$(HOME)/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+	@echo
 
 	#
 	# 🍎 MacOS System Config
