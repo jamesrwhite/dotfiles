@@ -92,6 +92,7 @@ brew "pipenv"
 brew "pipx"
 brew "gh"
 brew "grafana"
+brew "gcloud-cli"
 
 # Shell
 brew "fish"
