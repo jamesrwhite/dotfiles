@@ -57,6 +57,7 @@ setup:
 	mkdir -p "$(HOME)/.claude"
 	ln -sf "$(location)/claude/settings.json" "$(HOME)/.claude/settings.json"
 	ln -sf "$(location)/claude/statusline-command.sh" "$(HOME)/.claude/statusline-command.sh"
+	rtk init -g
 	@echo
 
 	#
