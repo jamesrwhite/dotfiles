@@ -52,6 +52,14 @@ setup:
 	@echo
 
 	#
+	# 🤖 Configuring Claude Code
+	#
+	mkdir -p "$(HOME)/.claude"
+	ln -sf "$(location)/claude/settings.json" "$(HOME)/.claude/settings.json"
+	ln -sf "$(location)/claude/statusline-command.sh" "$(HOME)/.claude/statusline-command.sh"
+	@echo
+
+	#
 	# 🍎 MacOS System Config
 	#
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
