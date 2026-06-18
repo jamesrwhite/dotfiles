@@ -5,7 +5,13 @@
   "permissions": {
     "allow": [
       "mcp__incident_io__*",
-      "Skill(incident)"
+      "Skill(incident)",
+      "Bash(rtk git log)",
+      "Bash(rtk git log *)",
+      "Bash(rtk git diff)",
+      "Bash(rtk git diff *)",
+      "Bash(rtk git status)",
+      "Bash(rtk git status *)"
     ]
   },
   "model": "sonnet",
