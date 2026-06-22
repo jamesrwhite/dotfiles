@@ -6,12 +6,16 @@
     "allow": [
       "mcp__incident_io__*",
       "Skill(incident)",
+      "Bash(rtk ls)",
+      "Bash(rtk ls *)",
       "Bash(rtk git log)",
       "Bash(rtk git log *)",
       "Bash(rtk git diff)",
       "Bash(rtk git diff *)",
       "Bash(rtk git status)",
-      "Bash(rtk git status *)"
+      "Bash(rtk git status *)",
+      "Bash(rtk grep *)",
+      "Bahs(rtk find *)"
     ]
   },
   "model": "sonnet",
