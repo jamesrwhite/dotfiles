@@ -15,6 +15,7 @@ window-padding-x = 20
 window-padding-y= 1 
 macos-icon = "retro"
 macos-titlebar-style = native
+split-divider-color = "#ccc"
 
 # working directories
 working-directory=home
