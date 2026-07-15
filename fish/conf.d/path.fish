@@ -1,3 +1,6 @@
+# Personal scripts
+set PATH "$HOME/bin" $PATH
+
 # Add homebrew to the PATH
 set PATH "/opt/homebrew/bin" $PATH
 set PATH "/opt/homebrew/sbin" $PATH
