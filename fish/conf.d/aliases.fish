@@ -44,3 +44,5 @@ abbr --add c2ip ipinfo cidr2ip
 abbr --add dns doge @1.1.1.1
 abbr --add p pnpm
 abbr --add pw pnpm wrangler
+abbr --add cl claude
+abbr --add cr claude --resume
