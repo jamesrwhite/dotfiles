@@ -21,7 +21,7 @@
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
-	rbm = "!f(){ git rebase -i $(git main-branch) $@; }; f"
+	rbm = "!f(){ m=$(git main-branch); git fetch origin $m:$m && GIT_SEQUENCE_EDITOR=true git rebase -i $m $@; }; f"
 	main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 	com = "!f(){ git checkout $(git main-branch) $@; }; f"
 	ac = commit --amend --no-edit
