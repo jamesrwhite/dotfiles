@@ -24,3 +24,12 @@ function dotenv
         set -gx $item[1] $item[2]
     end
 end
+
+function cld
+    set -l path $argv[1]
+    if test -z "$path"
+        set path (pwd)
+    end
+    open "claude://code/new?folder=$path"
+end
+
