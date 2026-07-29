@@ -22,7 +22,7 @@ abbr --add c code
 abbr --add g git
 abbr --add gs 'git status'
 abbr --add ga 'git add'
-abbr --add gc 'git commit -m'
+abbr --add gc --set-cursor  'git commit -m "%"'
 abbr --add grb 'git rebase'
 abbr --add gd 'git diff'
 abbr --add gu 'git pull --rebase --autostash'
