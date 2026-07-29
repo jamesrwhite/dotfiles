@@ -3,6 +3,48 @@
 My slow attempt to formalise all the tweaks I end up making to each machine
 I set up. Very much a work in progress.
 
+## What's Configured
+
+### Homebrew (`brew/Brewfile`)
+
+- Casks: browsers, chat/email/news apps, media, developer tools (VS Code, Ghostty, Rancher, SourceTree, aws-vault), fonts (Nerd Fonts, Hasklig, Fira), utilities (1Password, Bartender, Rectangle, Raycast)
+- Brews: unix tools (`bat`, `exa`, `zoxide`, `coreutils`), dev/k8s tooling (`mise`, `kubectl`, `k9s`, `helm`, `awscli`, `gcloud-cli`), shell (`fish`, `starship`), git (`hub`, `diff-so-fancy`), network/monitoring (`nmap`, `htop`, `btop`), and AI tools (`claude-code`, `codex`, `rtk`, `skills`, `mlx`)
+
+### Shell — fish (`fish/config.fish`, `fish/conf.d/*.fish`, `fish/fish_plugins`)
+
+- `config.fish`: iTerm/VS Code shell integration, `mise` activation, `zoxide` init, key bindings, emoji width fix
+- `conf.d/aliases.fish`: aliases (`ls`→`lsd`, `cat`→`bat`, etc.) and abbreviations for git, k8s, docker, pnpm
+- `conf.d/env.fish`: sets `$EDITOR` to vim
+- `conf.d/functions.fish`: helper functions — `mkcd`, `b64`/`b64d`, `ql`, `dotenv`, `cld` (open Claude desktop on a folder)
+- `conf.d/path.fish`: PATH setup for personal scripts, Homebrew, Go, pipx, cargo
+- `fish_plugins`: managed via `fisher` — agnoster theme, `bass`, async prompt, fzf/zoxide, humanize-duration
+
+### Git (`git/.gitconfig`, `git/.gitignore_global`)
+
+- User identity + SSH-based commit signing
+- Extensive aliases: `lg` (graph log), `rbm` (rebase on main), `com` (checkout main), `cf` (fixup commit), `sp` (stash pop), etc.
+- Sensible defaults: autostash/autosquash rebases, fast-forward-only pull/merge, `zdiff3` conflict style, prune on fetch
+- Global ignore patterns for macOS, Node, Python, Ruby, VS Code
+
+### Ghostty (`ghostty/config.ghostty`)
+
+- JetBrainsMono Nerd Font, Vercel theme, custom padding
+- Fish shell integration, working-directory inheritance rules for splits/tabs
+
+### Claude Code (`claude/settings.json`, `claude/statusline-command.sh`)
+
+- Auto mode enabled, `sonnet` model, medium effort level, custom statusline script
+- Permission allowlist: incident.io MCP tools, read-only `rtk` git/ls/grep commands
+- `PreToolUse` hook routes all Bash commands through `rtk hook claude`
+
+### Vim (`vim/.vimrc`)
+
+- Syntax highlighting, line numbers, sane backspace behaviour
+
+### macOS defaults (applied via `Makefile`)
+
+- Dark mode, sudo via Touch ID, dock auto-hide settings, hibernate mode 25
+
 ## Setup
 
 ### Clone Repo
