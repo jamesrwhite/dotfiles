@@ -18,6 +18,10 @@ abbr --add d docker
 abbr --add ping 'prettyping --nolegend'
 abbr --add c code
 
+abbr --add cl claude
+abbr --add son claude --model sonnet
+abbr --add hi claude --model haiku
+
 # git
 abbr --add g git
 abbr --add gs 'git status'
