@@ -4,8 +4,9 @@ test -e $HOME/.iterm2_shell_integration.fish && source $HOME/.iterm2_shell_integ
 # Theme config
 fish_default_key_bindings
 
-# Load mise version manager
-/opt/homebrew/bin/mise activate fish | source
+# Load mise version manager (shims, not activate, so per-directory tool
+# versions resolve correctly in non-interactive contexts too, e.g. Makefiles)
+fish_add_path -g $HOME/.local/share/mise/shims
 
 # Setup zoxide (z)
 zoxide init fish | source
