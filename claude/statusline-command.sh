@@ -1,10 +1,12 @@
 #!/bin/sh
 # Claude Code status line
-# Shows: directory | git branch | model | context usage | session tokens | effort | vim mode
+# Shows: directory | git branch | model | style | effort | context usage | session tokens | vim mode | cost
 input=$(cat)
 
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
 model=$(echo "$input" | jq -r '.model.display_name // empty')
+style=$(echo "$input" | jq -r '.output_style.name // empty')
+cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 effort=$(echo "$input" | jq -r '.effort.level // empty')
 vim_mode=$(echo "$input" | jq -r '.vim.mode // empty')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
@@ -25,38 +27,67 @@ if git -C "$cwd" --no-optional-locks rev-parse --is-inside-work-tree >/dev/null 
 fi
 
 # --- Directory (blue) ---
-printf "\033[34m%s\033[0m" "$short_dir"
+printf "\033[34m📁 %s\033[0m" "$short_dir"
 
-# --- Git branch (green clean, yellow dirty) ---
+# --- Git branch (green + sparkle when clean, yellow + wrench when dirty) ---
 if [ -n "$branch" ]; then
   if [ -n "$dirty" ]; then
-    printf " \033[33m%s ±\033[0m" "$branch"
+    printf " \033[33m🔧 %s ±\033[0m" "$branch"
   else
-    printf " \033[32m%s\033[0m" "$branch"
+    printf " \033[32m✨ %s\033[0m" "$branch"
   fi
 fi
 
-# --- Model (dim) ---
+# --- Model (dim, with a little brain) ---
 if [ -n "$model" ]; then
-  printf " \033[2m%s\033[0m" "$model"
+  printf " \033[2m🧠 %s\033[0m" "$model"
 fi
 
-# --- Context window usage (colour-coded by pressure) ---
+# --- Output style (dim, only when non-empty) ---
+if [ -n "$style" ]; then
+  printf " \033[2m✏️ %s\033[0m" "$style"
+fi
+
+# --- Effort level (emoji + level name, colour-coded green->yellow->red by
+#     intensity, no "effort:" label) ---
+if [ -n "$effort" ]; then
+  case "$effort" in
+    low) effort_colour="32" ;;      # green
+    medium) effort_colour="33" ;;   # yellow
+    high|xhigh|max) effort_colour="31" ;;  # red
+    *) effort_colour="35" ;;        # fallback: magenta
+  esac
+  printf " \033[%sm💪 %s\033[0m" "$effort_colour" "$effort"
+fi
+
+# --- Colour helper: green -> yellow -> red as a percentage increases ---
+pct_colour() {
+  pct="$1"
+  if [ "$pct" -ge 80 ]; then
+    printf "31"      # red
+  elif [ "$pct" -ge 50 ]; then
+    printf "33"      # yellow
+  else
+    printf "32"      # green
+  fi
+}
+
+# --- Context window usage (colour-coded green->yellow->red by pressure, with mood icon) ---
 if [ -n "$used_pct" ]; then
   used_int=$(printf "%.0f" "$used_pct")
+  colour=$(pct_colour "$used_int")
   if [ "$used_int" -ge 80 ]; then
-    # Red when high
-    printf " \033[31mcx:%d%%\033[0m" "$used_int"
+    icon="🔥"
   elif [ "$used_int" -ge 50 ]; then
-    # Yellow when moderate
-    printf " \033[33mcx:%d%%\033[0m" "$used_int"
+    icon="⚡"
   else
-    # Dim when low
-    printf " \033[2mcx:%d%%\033[0m" "$used_int"
+    icon="🚀"
   fi
+  printf " %s cx:\033[%sm%d%%\033[0m" "$icon" "$colour" "$used_int"
 fi
 
-# --- Session token counts (dim, only when data is available) ---
+# --- Session token counts (colour-coded green->yellow->red, scaled to this
+#     model's context window size via used_percentage) ---
 if [ -n "$total_in" ] && [ -n "$total_out" ]; then
   # Format large numbers with k suffix for readability
   fmt_k() {
@@ -69,17 +100,28 @@ if [ -n "$total_in" ] && [ -n "$total_out" ]; then
   }
   in_fmt=$(fmt_k "$total_in")
   out_fmt=$(fmt_k "$total_out")
-  printf " \033[2mtk:%s↑ %s↓\033[0m" "$in_fmt" "$out_fmt"
-fi
-
-# --- Effort level (only show when not the default "high") ---
-if [ -n "$effort" ] && [ "$effort" != "high" ]; then
-  printf " \033[35meffort:%s\033[0m" "$effort"
+  if [ -n "$used_pct" ]; then
+    tok_colour=$(pct_colour "$used_int")
+  else
+    tok_colour="2"  # dim when no context-window percentage is available yet
+  fi
+  printf " \033[%sm📊 %s↑ %s↓\033[0m" "$tok_colour" "$in_fmt" "$out_fmt"
 fi
 
 # --- Vim mode (cyan, only when vim mode is active) ---
 if [ -n "$vim_mode" ]; then
-  printf " \033[36m[%s]\033[0m" "$vim_mode"
+  printf " \033[36m⌨️ [%s]\033[0m" "$vim_mode"
+fi
+
+# --- Session cost (2dp USD, colour-coded grey->green->yellow->red by spend) ---
+if [ -n "$cost" ]; then
+  cost_colour=$(echo "$cost" | awk '{
+    if ($1 < 1) print "2";
+    else if ($1 < 5) print "32";
+    else if ($1 < 10) print "33";
+    else print "31";
+  }')
+  printf " \033[%sm💰 \$%.2f\033[0m" "$cost_colour" "$cost"
 fi
 
 echo ""
