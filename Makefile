@@ -57,6 +57,9 @@ setup:
 	mkdir -p "$(HOME)/.claude"
 	ln -sf "$(location)/claude/settings.json" "$(HOME)/.claude/settings.json"
 	ln -sf "$(location)/claude/statusline-command.sh" "$(HOME)/.claude/statusline-command.sh"
+	ln -sf "$(location)/claude/notify.sh" "$(HOME)/.claude/notify.sh"
+	ln -sf "$(location)/claude/focus-ghostty.sh" "$(HOME)/.claude/focus-ghostty.sh"
+	ln -sfn "$(location)/claude/icons" "$(HOME)/.claude/notify-icons"
 	rtk init -g
 	@echo
 

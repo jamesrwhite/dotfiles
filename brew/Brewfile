@@ -4,6 +4,7 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "muesli/tap"
+tap "send/tap"
 
 #
 # Casks
@@ -141,3 +142,6 @@ brew "mlx-lm"
 brew "claude-code"
 brew "codex"
 brew "rtk"
+
+# Claude Code notifications (click-to-focus)
+brew "send/tap/macnotifier"
