@@ -8,11 +8,10 @@ alias json 'jq -C .'
 
 abbr --add m make
 abbr --add page 'less -R'
-abbr --add mk minikube
 abbr --add tf terraform
 abbr --add copy pbcopy
 abbr --add dsusage ncdu
-abbr --add dc docker-compose
+abbr --add dc 'docker compose'
 abbr --add d docker
 abbr --add o obsidian
 
@@ -49,5 +48,4 @@ abbr --add c2ip ipinfo cidr2ip
 abbr --add dns doge @1.1.1.1
 abbr --add p pnpm
 abbr --add pw pnpm wrangler
-abbr --add cl claude
 abbr --add cr claude --resume
