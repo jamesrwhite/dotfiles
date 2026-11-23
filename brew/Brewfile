@@ -26,7 +26,6 @@ cask "ghostty@tip"
 cask "sourcetree"
 # cask "gpg-suite"
 cask "stats"
-cask "the-unarchiver"
 
 # Fonts
 cask "font-hack-nerd-font"
