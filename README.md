@@ -7,8 +7,8 @@ I set up. Very much a work in progress.
 
 ### Homebrew (`brew/Brewfile`)
 
-- Casks: browsers, chat/email/news apps, media, developer tools (VS Code, Ghostty, Rancher, SourceTree, aws-vault), fonts (Nerd Fonts, Hasklig, Fira), utilities (1Password, Bartender, Rectangle, Raycast)
-- Brews: unix tools (`bat`, `exa`, `zoxide`, `coreutils`), dev/k8s tooling (`mise`, `kubectl`, `k9s`, `helm`, `awscli`, `gcloud-cli`), shell (`fish`, `starship`), git (`hub`, `diff-so-fancy`), network/monitoring (`nmap`, `htop`, `btop`), and AI tools (`claude-code`, `codex`, `skills`, `mlx`)
+- Casks: browsers, chat/email/news apps, media, developer tools (VS Code, Ghostty, SourceTree), fonts (Nerd Fonts, Hasklig, Fira), utilities (1Password, Rectangle, Raycast)
+- Brews: unix tools (`bat`, `lsd`, `fzf`, `zoxide`, `coreutils`), dev/k8s tooling (`mise`, `docker`, `colima`, `kubectl`, `k9s`, `helm`, `awscli`, `gcloud-cli`), shell (`fish`, `starship`), git (`diff-so-fancy`), network/monitoring (`nmap`, `ipinfo-cli`, `htop`, `btop`), and AI tools (`claude-code`, `codex`, `skills`)
 
 ### Shell — fish (`fish/config.fish`, `fish/conf.d/*.fish`, `fish/fish_plugins`)
 

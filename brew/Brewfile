@@ -1,8 +1,6 @@
 #
 # Taps
 #
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "muesli/tap"
 tap "send/tap"
 
@@ -21,16 +19,12 @@ cask "obsidian"
 
 # Media
 cask "spotify"
-cask "macmediakeyforwarder"
 
 # Developer Tools
-cask "rancher"
 cask "visual-studio-code"
-cask "ghostty"
+cask "ghostty@tip"
 cask "sourcetree"
 # cask "gpg-suite"
-cask "aws-vault-binary"
-cask "graphiql"
 cask "stats"
 cask "the-unarchiver"
 
@@ -41,13 +35,10 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-fira-mono-nerd-font"
-cask "font-jetbrains-mono"
 
 # Utilities
 cask "1password"
 cask "1password-cli"
-cask "onyx"
-cask "bartender"
 cask "caffeine"
 cask "rectangle"
 cask "raycast"
@@ -59,13 +50,13 @@ cask "raycast"
 # Unix tools
 brew "coreutils"
 brew "bat"
+brew "lsd"
+brew "fzf"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "tree"
 brew "unzip"
-brew "pidof"
 brew "vim"
-brew "exa"
 brew "zoxide"
 
 # Dev Tools
@@ -78,9 +69,9 @@ brew "yq"
 brew "tflint"
 brew "awscli"
 brew "dive"
+brew "docker"
+brew "colima"
 brew "qrencode"
-brew "pass"
-brew "pass-otp"
 brew "tldr"
 brew "staticcheck"
 brew "kubectl"
@@ -88,12 +79,8 @@ brew "kubectx"
 brew "k9s"
 brew "int128/kubelogin/kubelogin"
 brew "helm"
-brew "minikube"
-brew "pipenv"
-brew "pipx"
 brew "gh"
-brew "grafana"
-brew "gcloud-cli"
+cask "gcloud-cli"
 
 # Shell
 brew "fish"
@@ -104,7 +91,6 @@ brew "shellcheck"
 
 # Git
 brew "git"
-brew "hub"
 brew "diff-so-fancy"
 brew "git-quick-stats"
 brew "git-standup"
@@ -119,10 +105,10 @@ brew "telnet"
 brew "wget"
 brew "mtr"
 brew "nmap"
-brew "prettyping"
 brew "vnstat"
 brew "websocat"
 brew "doge"
+brew "ipinfo-cli"
 
 # Monitoring
 brew "ctop"
@@ -137,10 +123,8 @@ brew "sl"
 
 # AI
 brew "skills"
-brew "mlx"
-brew "mlx-lm"
-brew "claude-code"
-brew "codex"
+cask "claude-code"
+cask "codex"
 
 # Claude Code notifications (click-to-focus)
 brew "send/tap/macnotifier"
