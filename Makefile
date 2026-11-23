@@ -60,7 +60,6 @@ setup:
 	ln -sf "$(location)/claude/notify.sh" "$(HOME)/.claude/notify.sh"
 	ln -sf "$(location)/claude/focus-ghostty.sh" "$(HOME)/.claude/focus-ghostty.sh"
 	ln -sfn "$(location)/claude/icons" "$(HOME)/.claude/notify-icons"
-	rtk init -g
 	@echo
 
 	#

@@ -8,7 +8,7 @@ I set up. Very much a work in progress.
 ### Homebrew (`brew/Brewfile`)
 
 - Casks: browsers, chat/email/news apps, media, developer tools (VS Code, Ghostty, Rancher, SourceTree, aws-vault), fonts (Nerd Fonts, Hasklig, Fira), utilities (1Password, Bartender, Rectangle, Raycast)
-- Brews: unix tools (`bat`, `exa`, `zoxide`, `coreutils`), dev/k8s tooling (`mise`, `kubectl`, `k9s`, `helm`, `awscli`, `gcloud-cli`), shell (`fish`, `starship`), git (`hub`, `diff-so-fancy`), network/monitoring (`nmap`, `htop`, `btop`), and AI tools (`claude-code`, `codex`, `rtk`, `skills`, `mlx`)
+- Brews: unix tools (`bat`, `exa`, `zoxide`, `coreutils`), dev/k8s tooling (`mise`, `kubectl`, `k9s`, `helm`, `awscli`, `gcloud-cli`), shell (`fish`, `starship`), git (`hub`, `diff-so-fancy`), network/monitoring (`nmap`, `htop`, `btop`), and AI tools (`claude-code`, `codex`, `skills`, `mlx`)
 
 ### Shell — fish (`fish/config.fish`, `fish/conf.d/*.fish`, `fish/fish_plugins`)
 
@@ -34,8 +34,7 @@ I set up. Very much a work in progress.
 ### Claude Code (`claude/settings.json`, `claude/statusline-command.sh`)
 
 - Auto mode enabled, `sonnet` model, medium effort level, custom statusline script
-- Permission allowlist: incident.io MCP tools, read-only `rtk` git/ls/grep commands
-- `PreToolUse` hook routes all Bash commands through `rtk hook claude`
+- Permission allowlist: incident.io MCP tools
 
 ### Vim (`vim/.vimrc`)
 
