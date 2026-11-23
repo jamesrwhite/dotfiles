@@ -20,3 +20,6 @@ set -g fish_greeting
 # VS Code integration
 string match -q "$TERM_PROGRAM" "vscode"
 and . (code --locate-shell-integration-path fish)
+
+# Trust the Obsidian Local REST API's self-signed cert for Node/Claude Code MCP
+set -gx NODE_EXTRA_CA_CERTS $HOME/.obsidian-mcp/obsidian-local-rest-api.crt
