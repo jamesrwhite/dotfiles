@@ -1,6 +1,3 @@
-# iTerm Fish Integration
-test -e $HOME/.iterm2_shell_integration.fish && source $HOME/.iterm2_shell_integration.fish
-
 # Theme config
 fish_default_key_bindings
 

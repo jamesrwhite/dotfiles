@@ -12,12 +12,12 @@ I set up. Very much a work in progress.
 
 ### Shell — fish (`fish/config.fish`, `fish/conf.d/*.fish`, `fish/fish_plugins`)
 
-- `config.fish`: iTerm/VS Code shell integration, `mise` activation, `zoxide` init, key bindings, emoji width fix
+- `config.fish`: VS Code shell integration, `mise` activation, `zoxide` init, key bindings, emoji width fix
 - `conf.d/aliases.fish`: aliases (`ls`→`lsd`, `cat`→`bat`, etc.) and abbreviations for git, k8s, docker, pnpm
 - `conf.d/env.fish`: sets `$EDITOR` to vim
 - `conf.d/functions.fish`: helper functions — `mkcd`, `b64`/`b64d`, `ql`, `dotenv`, `cld` (open Claude desktop on a folder)
 - `conf.d/path.fish`: PATH setup for personal scripts, Homebrew, Go, pipx, cargo
-- `fish_plugins`: managed via `fisher` — agnoster theme, `bass`, async prompt, fzf/zoxide, humanize-duration
+- `fish_plugins`: managed via `fisher` — `bass`, async prompt, fzf/zoxide, humanize-duration
 
 ### Git (`git/.gitconfig`, `git/.gitignore_global`)
 
