@@ -37,6 +37,14 @@ setup:
 	@echo
 
 	#
+	# 🧰 Configuring mise
+	#
+	mkdir -p "$(HOME)/.config/mise"
+	ln -sf "$(location)/mise/config.toml" "$(HOME)/.config/mise/config.toml"
+	"$(homebrew)/mise" install
+	@echo
+
+	#
 	# ♻️ Configuring git
 	#
 	ln -sf "$(location)/git/.gitignore_global" "$(HOME)/.gitignore_global"

@@ -1,0 +1,7 @@
+[tools]
+node = "lts"
+tflint = "latest"
+usage = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby", "node"]

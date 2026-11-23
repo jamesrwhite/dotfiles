@@ -19,6 +19,10 @@ I set up. Very much a work in progress.
 - `conf.d/path.fish`: PATH setup for personal scripts, Homebrew, Go, pipx, cargo
 - `fish_plugins`: managed via `fisher` — `bass`, async prompt, fzf/zoxide, humanize-duration
 
+### mise (`mise/config.toml`)
+
+- Global tool versions: `node` (LTS), `tflint`, `usage`
+
 ### Git (`git/.gitconfig`, `git/.gitignore_global`)
 
 - User identity + SSH-based commit signing
