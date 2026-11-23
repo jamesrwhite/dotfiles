@@ -22,7 +22,7 @@ cask "spotify"
 
 # Developer Tools
 cask "visual-studio-code"
-cask "ghostty@tip"
+cask "ghostty"
 cask "sourcetree"
 # cask "gpg-suite"
 cask "stats"
