@@ -21,17 +21,19 @@ setup:
 	#
 	# 👆 Enabling sudo via TouchID
 	#
-	echo 'auth       sufficient     pam_tid.so' | sudo tee /etc/pam.d/sudo_local
+	grep -qs pam_tid.so /etc/pam.d/sudo_local || \
+		echo 'auth       sufficient     pam_tid.so' | sudo tee /etc/pam.d/sudo_local
 
 	#
 	# 🐟 Making fish the default shell and configuring it
 	#
-	chsh -s "$(homebrew)/fish"
-	mkdir -p "$(HOME)/.config/fish"
+	grep -qx "$(homebrew)/fish" /etc/shells || echo "$(homebrew)/fish" | sudo tee -a /etc/shells
+	dscl . -read "$(HOME)" UserShell | grep -q "$(homebrew)/fish" || chsh -s "$(homebrew)/fish"
+	mkdir -p "$(HOME)/.config/fish/conf.d"
 	ln -sf "$(location)/fish/config.fish" "$(HOME)/.config/fish/config.fish"
 	ln -sf $(location)/fish/conf.d/*.fish $(HOME)/.config/fish/conf.d/
-	cp "$(location)/fish/secrets.example.fish" "$(HOME)/.config/fish/conf.d/secrets.fish"
-	cp "$(location)/fish/local.example.fish" "$(HOME)/.config/fish/conf.d/local.fish"
+	test -e "$(HOME)/.config/fish/conf.d/secrets.fish" || cp "$(location)/fish/secrets.example.fish" "$(HOME)/.config/fish/conf.d/secrets.fish"
+	test -e "$(HOME)/.config/fish/conf.d/local.fish" || cp "$(location)/fish/local.example.fish" "$(HOME)/.config/fish/conf.d/local.fish"
 	ln -sf "$(location)/fish/fish_plugins" "$(HOME)/.config/fish/fish_plugins"
 	fish -c "fisher update"
 	@echo
