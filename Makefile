@@ -15,7 +15,7 @@ setup:
 	#
 	# 🏗 Installing apps and tools via brew
 	#
-	cd brew && "$(homebrew)/brew" bundle --no-lock
+	cd brew && "$(homebrew)/brew" bundle
 	@echo
 
 	#
