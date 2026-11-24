@@ -46,7 +46,10 @@ I set up. Very much a work in progress.
 
 ### macOS defaults (applied via `Makefile`)
 
-- Dark mode, sudo via Touch ID, dock auto-hide settings, hibernate mode 25
+- Dark mode, sudo via Touch ID, hibernate mode 25
+- Fast key repeat, two-button mouse, non-natural scrolling, two-finger secondary click on trackpad
+- Dock on the left, auto-hidden, scale minimise effect, minimise into app icon, no recent apps or folder stacks
+- Keyboard, mouse and trackpad changes need a log out to take effect
 
 ## Setup
 
@@ -66,23 +69,6 @@ make setup
 
 This assumes the repo was cloned to `$HOME/.dotfiles`, if it wasn't you can pass
 the `location=/path/to/dotfiles` argument.
-
-### Mac Settings
-
-> TODO: look into automating these via https://macos-defaults.com/#💻-list-of-commands
-
-- [x] enable dark mode
-- [x] full hibernate on laptop close
-- [ ] Reduce keyboard repeat key lag
-- [ ] move doc to left
-- [ ] hide applications holder in dock
-- [ ] right click on mouse
-- [ ] invert scroll on trackpad
-- [ ] double tap to right click on trackpad
-- [ ] turn dock hiding on
-- [ ] minimise to dock using scale
-- [ ] minimise windows into app window
-- [ ] don't show recent apps in dock
 
 ### VS Code
 

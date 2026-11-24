@@ -75,8 +75,26 @@ setup:
 	# 🍎 MacOS System Config
 	#
 	osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
-	defaults write com.apple.dock showhidden -bool TRUE
+	sudo pmset hibernatemode 25
+	# Keyboard: fast key repeat with a short initial delay
+	defaults write -g InitialKeyRepeat -int 15
+	defaults write -g KeyRepeat -int 2
+	# Mouse: enable secondary (right) click
+	defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string TwoButton
+	defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string TwoButton
+	# Trackpad: disable "natural" scrolling, two-finger click/tap for secondary click
+	defaults write -g com.apple.swipescrolldirection -bool false
+	defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+	# Dock: left, auto-hide, scale effect, minimise into app icon, no recents or folder stacks
+	defaults write com.apple.dock orientation -string left
+	defaults write com.apple.dock autohide -bool true
+	defaults write com.apple.dock mineffect -string scale
+	defaults write com.apple.dock minimize-to-application -bool true
+	defaults write com.apple.dock show-recents -bool false
+	defaults write com.apple.dock persistent-others -array
+	defaults write com.apple.dock showhidden -bool true
 	defaults write com.apple.dock appswitcher-all-displays -bool true
 	killall Dock
-	sudo pmset hibernatemode 25
+	@echo "ℹ️  Keyboard, mouse and trackpad changes take effect after logging out and back in"
 
