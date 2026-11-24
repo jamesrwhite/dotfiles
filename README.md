@@ -54,7 +54,8 @@ the `location=/path/to/dotfiles` argument.
 
 - User identity + SSH-based commit signing
 - Extensive aliases: `lg` (graph log), `rbm` (rebase on main), `com` (checkout main), `cf` (fixup commit), `sp` (stash pop), etc.
-- Sensible defaults: autostash/autosquash rebases, fast-forward-only pull/merge, `zdiff3` conflict style, prune on fetch
+- Linked to `~/.config/git/config`; `~/.gitconfig` is left as an untracked per-machine file (credential helpers, tool-written settings) that takes precedence
+- Sensible defaults: autostash/autosquash rebases, rebasing pulls, fast-forward-only merges, `zdiff3` conflict style, prune on fetch
 - Global ignore patterns for macOS, Node, Python, Ruby, VS Code
 
 ### Ghostty (`ghostty/config.ghostty`)

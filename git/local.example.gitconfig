@@ -1,0 +1,7 @@
+# Machine-specific git config. Copied to ~/.gitconfig by `make setup` and not
+# tracked. Git reads this after ~/.config/git/config (the shared dotfiles
+# config), so anything here wins, and `git config --global` writes here.
+
+# commit.gpgsign is on in the shared config, so set this machine's SSH signing key
+[user]
+	signingkey = ~/.ssh/id_ed25519.pub

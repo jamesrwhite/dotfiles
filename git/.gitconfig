@@ -1,7 +1,6 @@
 [user]
 	email = dev.jameswhite@gmail.com
 	name = James White
-	signingkey = ~/.ssh/id_rsa.pub
 [alias]
 	c = commit
 	p = push
@@ -64,7 +63,6 @@
 	gpgsign = true
 [pull]
 	rebase = true
-	ff = only
 	autostash = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -95,3 +93,5 @@
 	ui = auto
 [tag]
 	sort = version:refname
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers

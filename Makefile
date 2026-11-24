@@ -63,7 +63,11 @@ setup:
 	# ♻️ Configuring git
 	#
 	ln -sf "$(location)/git/.gitignore_global" "$(HOME)/.gitignore_global"
-	ln -sf "$(location)/git/.gitconfig" "$(HOME)/.gitconfig"
+	mkdir -p "$(HOME)/.config/git"
+	ln -sf "$(location)/git/.gitconfig" "$(HOME)/.config/git/config"
+	# ~/.gitconfig is per-machine (and where `git config --global` writes), so replace any old symlink to the shared config
+	! test -L "$(HOME)/.gitconfig" || rm "$(HOME)/.gitconfig"
+	test -e "$(HOME)/.gitconfig" || cp "$(location)/git/local.example.gitconfig" "$(HOME)/.gitconfig"
 	@echo
 
 	#
