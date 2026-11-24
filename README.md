@@ -19,6 +19,10 @@ I set up. Very much a work in progress.
 - `conf.d/path.fish`: PATH setup for personal scripts, Homebrew, Go, pipx, cargo
 - `fish_plugins`: managed via `fisher` — `bass`, async prompt, fzf/zoxide, humanize-duration
 
+### Starship (`starship/starship.toml`)
+
+- `❯` prompt character, command duration shown for commands over 10s, gcloud and battery modules disabled
+
 ### mise (`mise/config.toml`)
 
 - Global tool versions: `node` (LTS), `tflint`, `usage`
@@ -73,9 +77,3 @@ the `location=/path/to/dotfiles` argument.
 ### VS Code
 
 - Setting Sync
-
-### TODO
-
-- Add shell to `/etc/shells`
-- link `.vimrc`
-- Add `.config/starship.toml`

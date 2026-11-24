@@ -39,6 +39,19 @@ setup:
 	@echo
 
 	#
+	# 🚀 Configuring starship
+	#
+	mkdir -p "$(HOME)/.config"
+	ln -sf "$(location)/starship/starship.toml" "$(HOME)/.config/starship.toml"
+	@echo
+
+	#
+	# 📝 Configuring vim
+	#
+	ln -sf "$(location)/vim/.vimrc" "$(HOME)/.vimrc"
+	@echo
+
+	#
 	# 🧰 Configuring mise
 	#
 	mkdir -p "$(HOME)/.config/mise"
