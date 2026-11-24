@@ -3,6 +3,29 @@
 My slow attempt to formalise all the tweaks I end up making to each machine
 I set up. Very much a work in progress.
 
+## Setup
+
+### Clone Repo
+
+```bash
+cd && git clone git@github.com:jamesrwhite/dotfiles.git .dotfiles
+```
+
+The above will clone it in `$HOME/.dotfiles`
+
+### Run Setup
+
+```bash
+make setup
+```
+
+This assumes the repo was cloned to `$HOME/.dotfiles`, if it wasn't you can pass
+the `location=/path/to/dotfiles` argument.
+
+### VS Code
+
+- Setting Sync
+
 ## What's Configured
 
 ### Homebrew (`brew/Brewfile`)
@@ -54,26 +77,3 @@ I set up. Very much a work in progress.
 - Fast key repeat, two-button mouse, non-natural scrolling, two-finger secondary click on trackpad
 - Dock on the left, auto-hidden, scale minimise effect, minimise into app icon, no recent apps or folder stacks
 - Keyboard, mouse and trackpad changes need a log out to take effect
-
-## Setup
-
-### Clone Repo
-
-```bash
-cd && git clone git@github.com:jamesrwhite/dotfiles.git .dotfiles
-```
-
-The above will clone it in `$HOME/.dotfiles`
-
-### Run Setup
-
-```bash
-make setup
-```
-
-This assumes the repo was cloned to `$HOME/.dotfiles`, if it wasn't you can pass
-the `location=/path/to/dotfiles` argument.
-
-### VS Code
-
-- Setting Sync
