@@ -1,17 +1,21 @@
 #!/bin/sh
 # Claude Code status line
-# Shows: directory | git branch | model | style | effort | context usage | session tokens | vim mode | cost
+# Shows: directory | git branch | model | effort | context usage | vim mode | cost
 input=$(cat)
 
-cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
-model=$(echo "$input" | jq -r '.model.display_name // empty')
-style=$(echo "$input" | jq -r '.output_style.name // empty')
-cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
-effort=$(echo "$input" | jq -r '.effort.level // empty')
-vim_mode=$(echo "$input" | jq -r '.vim.mode // empty')
-used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
-total_in=$(echo "$input" | jq -r '.context_window.total_input_tokens // empty')
-total_out=$(echo "$input" | jq -r '.context_window.total_output_tokens // empty')
+# Extract all fields in one jq call, joined by the ASCII unit separator
+# (a non-whitespace IFS char, so empty fields are preserved by read)
+sep=$(printf '\037')
+IFS="$sep" read -r cwd model cost effort vim_mode used_pct <<EOF
+$(echo "$input" | jq -r '[
+  .workspace.current_dir // .cwd // "",
+  .model.display_name // "",
+  .cost.total_cost_usd // "",
+  .effort.level // "",
+  .vim.mode // "",
+  .context_window.used_percentage // ""
+] | map(tostring) | join("\u001f")')
+EOF
 
 # Shorten the directory path (replace $HOME with ~)
 home="$HOME"
@@ -40,12 +44,7 @@ fi
 
 # --- Model (dim, with a little brain) ---
 if [ -n "$model" ]; then
-  printf " \033[2m🧠 %s\033[0m" "$model"
-fi
-
-# --- Output style (dim, only when non-empty) ---
-if [ -n "$style" ]; then
-  printf " \033[2m✏️ %s\033[0m" "$style"
+  printf " \033[38;5;246m🧠 %s\033[0m" "$model"
 fi
 
 # --- Effort level (emoji + level name, colour-coded green->yellow->red by
@@ -72,40 +71,11 @@ pct_colour() {
   fi
 }
 
-# --- Context window usage (colour-coded green->yellow->red by pressure, with mood icon) ---
+# --- Context window usage (colour-coded green->yellow->red by pressure) ---
 if [ -n "$used_pct" ]; then
   used_int=$(printf "%.0f" "$used_pct")
   colour=$(pct_colour "$used_int")
-  if [ "$used_int" -ge 80 ]; then
-    icon="🔥"
-  elif [ "$used_int" -ge 50 ]; then
-    icon="⚡"
-  else
-    icon="🚀"
-  fi
-  printf " %s cx:\033[%sm%d%%\033[0m" "$icon" "$colour" "$used_int"
-fi
-
-# --- Session token counts (colour-coded green->yellow->red, scaled to this
-#     model's context window size via used_percentage) ---
-if [ -n "$total_in" ] && [ -n "$total_out" ]; then
-  # Format large numbers with k suffix for readability
-  fmt_k() {
-    val="$1"
-    if [ "$val" -ge 1000 ]; then
-      printf "%.1fk" "$(echo "$val 1000" | awk '{printf "%.1f", $1/$2}')"
-    else
-      printf "%d" "$val"
-    fi
-  }
-  in_fmt=$(fmt_k "$total_in")
-  out_fmt=$(fmt_k "$total_out")
-  if [ -n "$used_pct" ]; then
-    tok_colour=$(pct_colour "$used_int")
-  else
-    tok_colour="2"  # dim when no context-window percentage is available yet
-  fi
-  printf " \033[%sm📊 %s↑ %s↓\033[0m" "$tok_colour" "$in_fmt" "$out_fmt"
+  printf " 💭 \033[%sm%d%%\033[0m" "$colour" "$used_int"
 fi
 
 # --- Vim mode (cyan, only when vim mode is active) ---
