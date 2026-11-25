@@ -22,6 +22,7 @@
       }
     ]
   },
+  "preferredNotifChannel": "notifications_disabled",
   "statusLine": {
     "type": "command",
     "command": "sh $HOME/.claude/statusline-command.sh"

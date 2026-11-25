@@ -22,7 +22,6 @@ esac
 subtitle="📍 $project"
 [ -n "$branch" ] && subtitle="📍 $project [$branch]"
 
-# macnotifier shows the emoji as a thumbnail; other paths put it in the title.
 title="$reason $emoji"
 
 # Find the TTY of the Claude session by walking up the process tree.
@@ -38,21 +37,11 @@ find_tty() {
   done
 }
 
+# In Ghostty, emit an OSC 777 notification on the session's TTY. Ghostty owns
+# it, so clicking focuses the exact tab/split and it's cleared once that
+# tab/split gains focus.
 if [ "$TERM_PROGRAM" = "ghostty" ]; then
   tty=$(find_tty)
-
-  # Preferred: macnotifier, with a click action that focuses the exact
-  # Ghostty tab/split running this session.
-  if [ -n "$tty" ] && command -v macnotifier >/dev/null 2>&1; then
-    icon="$HOME/.claude/notify-icons/${type:-default}.png"
-    [ -f "$icon" ] || icon="$HOME/.claude/notify-icons/default.png"
-    macnotifier -t "$reason" -m "$subtitle
-$message" --sound default --icon "$icon" \
-      -e "sh '$HOME/.claude/focus-ghostty.sh' '$tty'" >/dev/null 2>&1 && exit 0
-  fi
-
-  # Otherwise emit an OSC 777 notification on the session's TTY. Ghostty
-  # owns it, so clicking focuses the exact tab/split (no subtitle support).
   if [ -n "$tty" ] && [ -w "$tty" ]; then
     # Strip ';' and control chars, which would break the escape sequence.
     clean() { printf '%s' "$1" | tr -d ';\000-\037\177'; }

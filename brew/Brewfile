@@ -2,7 +2,6 @@
 # Taps
 #
 tap "muesli/tap"
-tap "send/tap"
 
 #
 # Casks
@@ -123,6 +122,3 @@ brew "sl"
 brew "skills"
 cask "claude-code"
 cask "codex"
-
-# Claude Code notifications (click-to-focus)
-brew "send/tap/macnotifier"
