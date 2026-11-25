@@ -9,20 +9,18 @@ type=$(printf '%s' "$input" | jq -r '.notification_type // empty')
 cwd=$(printf '%s' "$input" | jq -r '.cwd // empty')
 
 project=$(basename "${cwd:-$PWD}")
-branch=$(git -C "${cwd:-$PWD}" branch --show-current 2>/dev/null)
 
 case "$type" in
-  permission_prompt) reason="Permission needed" emoji="🔐" ;;
-  idle_prompt) reason="Waiting" emoji="💤" ;;
-  elicitation_dialog) reason="Question" emoji="🙋🏻‍♂️" ;;
-  auth_success) reason="Authenticated" emoji="✅" ;;
-  *) reason="Needs attention" emoji="👀" ;;
+  permission_prompt) title="🔐 Permission" ;;
+  idle_prompt) title="💤 Waiting" ;;
+  elicitation_dialog) title="🙋🏻‍♂️ Question" ;;
+  auth_success) title="✅ Authenticated" ;;
+  *) title="👀 Attention" ;;
 esac
 
-subtitle="📍 $project"
-[ -n "$branch" ] && subtitle="📍 $project [$branch]"
-
-title="$reason $emoji"
+# macOS shows one title line and two body lines, and Ghostty uses the tab
+# title as the subtitle, so: action in the title, location + message in the body.
+body="📍 $project · $message"
 
 # Find the TTY of the Claude session by walking up the process tree.
 find_tty() {
@@ -45,16 +43,16 @@ if [ "$TERM_PROGRAM" = "ghostty" ]; then
   if [ -n "$tty" ] && [ -w "$tty" ]; then
     # Strip ';' and control chars, which would break the escape sequence.
     clean() { printf '%s' "$1" | tr -d ';\000-\037\177'; }
-    printf '\033]777;notify;%s;%s\007' "$(clean "$title")" "$(clean "$subtitle · $message")" > "$tty"
+    printf '\033]777;notify;%s;%s\007' "$(clean "$title")" "$(clean "$body")" > "$tty"
     exit 0
   fi
 fi
 
 # Fallback: plain macOS notification (clicking it opens Script Editor).
 # Pass values as argv so quotes in the message can't break the AppleScript.
-osascript - "$message" "$title" "$subtitle" <<'EOF' >/dev/null 2>&1
+osascript - "$body" "$title" <<'EOF' >/dev/null 2>&1
 on run argv
-  display notification (item 1 of argv) with title (item 2 of argv) subtitle (item 3 of argv) sound name "Glass"
+  display notification (item 1 of argv) with title (item 2 of argv) sound name "Glass"
 end run
 EOF
 
